@@ -107,13 +107,25 @@ export function loadGtfs(dir) {
   }
 
   // Stops are grouped by name: a stop name usually has one platform per direction.
+  // Hubs name each platform with a letter ("Mjódd A" … "Mjódd E"); those are merged into one
+  // stop ("Mjódd") and the letter is reported per departure so people know where to stand.
+  const stopRows = readCsv(dir, 'stops.txt').filter((s) => !s.location_type || s.location_type === '0');
+  const PLATFORM = /^(.+?) ([A-H])$/;
+  const lettered = new Map(); // base name -> number of lettered platforms
+  for (const s of stopRows) {
+    const m = PLATFORM.exec(s.stop_name);
+    if (m) lettered.set(m[1], (lettered.get(m[1]) || 0) + 1);
+  }
+
   const stopById = new Map();
   const groups = new Map(); // key -> { key, name, ids, lat, lon }
-  for (const s of readCsv(dir, 'stops.txt')) {
-    if (s.location_type && s.location_type !== '0') continue; // skip stations/entrances
-    const name = s.stop_name;
+  for (const s of stopRows) {
+    let name = s.stop_name;
+    let platform = null;
+    const m = PLATFORM.exec(name);
+    if (m && lettered.get(m[1]) >= 2) { name = m[1]; platform = m[2]; } // a lone "Ásland I" stays as it is
     const key = fold(name).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || s.stop_id;
-    stopById.set(s.stop_id, { id: s.stop_id, name, key });
+    stopById.set(s.stop_id, { id: s.stop_id, name, key, platform });
     if (!groups.has(key)) groups.set(key, { key, name, folded: fold(name), ids: [], lat: 0, lon: 0 });
     const g = groups.get(key);
     g.ids.push(s.stop_id);
@@ -271,6 +283,7 @@ export function loadGtfs(dir) {
             out.push({
               tripId,
               stopId,
+              platform: stopById.get(stopId)?.platform ?? null,
               routeId: trip.routeId,
               route: routes.get(trip.routeId)?.name ?? trip.routeId,
               headsign: trip.headsign,
