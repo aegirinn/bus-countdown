@@ -1,0 +1,676 @@
+route_id,service_id,trip_id,trip_headsign,direction_id
+ST.1,WK,ST.1_WK_0_1,Mjódd,0
+ST.1,WK,ST.1_WK_0_2,Mjódd,0
+ST.1,WK,ST.1_WK_0_3,Mjódd,0
+ST.1,WK,ST.1_WK_0_4,Mjódd,0
+ST.1,WK,ST.1_WK_0_5,Mjódd,0
+ST.1,WK,ST.1_WK_0_6,Mjódd,0
+ST.1,WK,ST.1_WK_0_7,Mjódd,0
+ST.1,WK,ST.1_WK_0_8,Mjódd,0
+ST.1,WK,ST.1_WK_0_9,Mjódd,0
+ST.1,WK,ST.1_WK_0_10,Mjódd,0
+ST.1,WK,ST.1_WK_0_11,Mjódd,0
+ST.1,WK,ST.1_WK_0_12,Mjódd,0
+ST.1,WK,ST.1_WK_0_13,Mjódd,0
+ST.1,WK,ST.1_WK_0_14,Mjódd,0
+ST.1,WK,ST.1_WK_0_15,Mjódd,0
+ST.1,WK,ST.1_WK_0_16,Mjódd,0
+ST.1,WK,ST.1_WK_0_17,Mjódd,0
+ST.1,WK,ST.1_WK_0_18,Mjódd,0
+ST.1,WK,ST.1_WK_0_19,Mjódd,0
+ST.1,WK,ST.1_WK_0_20,Mjódd,0
+ST.1,WK,ST.1_WK_0_21,Mjódd,0
+ST.1,WK,ST.1_WK_0_22,Mjódd,0
+ST.1,WK,ST.1_WK_0_23,Mjódd,0
+ST.1,WK,ST.1_WK_0_24,Mjódd,0
+ST.1,WK,ST.1_WK_0_25,Mjódd,0
+ST.1,WK,ST.1_WK_0_26,Mjódd,0
+ST.1,WK,ST.1_WK_0_27,Mjódd,0
+ST.1,WK,ST.1_WK_0_28,Mjódd,0
+ST.1,WK,ST.1_WK_0_29,Mjódd,0
+ST.1,WK,ST.1_WK_0_30,Mjódd,0
+ST.1,WK,ST.1_WK_0_31,Mjódd,0
+ST.1,WK,ST.1_WK_0_32,Mjódd,0
+ST.1,WK,ST.1_WK_0_33,Mjódd,0
+ST.1,WK,ST.1_WK_0_34,Mjódd,0
+ST.1,WK,ST.1_WK_0_35,Mjódd,0
+ST.1,WK,ST.1_WK_0_36,Mjódd,0
+ST.1,WK,ST.1_WK_0_37,Mjódd,0
+ST.1,WK,ST.1_WK_0_38,Mjódd,0
+ST.1,WK,ST.1_WK_0_39,Mjódd,0
+ST.1,WK,ST.1_WK_0_40,Mjódd,0
+ST.1,WK,ST.1_WK_0_41,Mjódd,0
+ST.1,WK,ST.1_WK_0_42,Mjódd,0
+ST.1,WK,ST.1_WK_0_43,Mjódd,0
+ST.1,WK,ST.1_WK_0_44,Mjódd,0
+ST.1,WK,ST.1_WK_0_45,Mjódd,0
+ST.1,WK,ST.1_WK_0_46,Mjódd,0
+ST.1,WK,ST.1_WK_0_47,Mjódd,0
+ST.1,WK,ST.1_WK_0_48,Mjódd,0
+ST.1,WK,ST.1_WK_0_49,Mjódd,0
+ST.1,WK,ST.1_WK_0_50,Mjódd,0
+ST.1,WK,ST.1_WK_0_51,Mjódd,0
+ST.1,WK,ST.1_WK_0_52,Mjódd,0
+ST.1,WK,ST.1_WK_0_53,Mjódd,0
+ST.1,WK,ST.1_WK_0_54,Mjódd,0
+ST.1,WK,ST.1_WK_0_55,Mjódd,0
+ST.1,WK,ST.1_WK_0_56,Mjódd,0
+ST.1,WK,ST.1_WK_0_57,Mjódd,0
+ST.1,WK,ST.1_WK_0_58,Mjódd,0
+ST.1,WK,ST.1_WK_0_59,Mjódd,0
+ST.1,WK,ST.1_WK_0_60,Mjódd,0
+ST.1,WK,ST.1_WK_0_61,Mjódd,0
+ST.1,WK,ST.1_WK_0_62,Mjódd,0
+ST.1,WK,ST.1_WK_0_63,Mjódd,0
+ST.1,WK,ST.1_WK_0_64,Mjódd,0
+ST.1,WK,ST.1_WK_0_65,Mjódd,0
+ST.1,WK,ST.1_WK_0_66,Mjódd,0
+ST.1,WK,ST.1_WK_0_67,Mjódd,0
+ST.1,WK,ST.1_WK_0_68,Mjódd,0
+ST.1,WK,ST.1_WK_0_69,Mjódd,0
+ST.1,WK,ST.1_WK_0_70,Mjódd,0
+ST.1,WK,ST.1_WK_0_71,Mjódd,0
+ST.1,WK,ST.1_WK_0_72,Mjódd,0
+ST.1,WK,ST.1_WK_0_73,Mjódd,0
+ST.1,WK,ST.1_WK_0_74,Mjódd,0
+ST.1,WK,ST.1_WK_0_75,Mjódd,0
+ST.1,WK,ST.1_WK_0_76,Mjódd,0
+ST.1,WK,ST.1_WK_0_77,Mjódd,0
+ST.1,WK,ST.1_WK_0_78,Mjódd,0
+ST.1,WK,ST.1_WK_0_79,Mjódd,0
+ST.1,WK,ST.1_WK_0_80,Mjódd,0
+ST.1,WK,ST.1_WK_0_81,Mjódd,0
+ST.1,WK,ST.1_WK_0_82,Mjódd,0
+ST.1,WK,ST.1_WK_0_83,Mjódd,0
+ST.1,WK,ST.1_WK_0_84,Mjódd,0
+ST.1,WK,ST.1_WK_0_85,Mjódd,0
+ST.1,WK,ST.1_WK_0_86,Mjódd,0
+ST.1,WK,ST.1_WK_0_87,Mjódd,0
+ST.1,WK,ST.1_WK_0_88,Mjódd,0
+ST.1,WK,ST.1_WK_0_89,Mjódd,0
+ST.1,WK,ST.1_WK_0_90,Mjódd,0
+ST.1,WK,ST.1_WK_0_91,Mjódd,0
+ST.1,WK,ST.1_WK_0_92,Mjódd,0
+ST.1,WK,ST.1_WK_0_93,Mjódd,0
+ST.1,WK,ST.1_WK_0_94,Mjódd,0
+ST.1,WK,ST.1_WK_0_95,Mjódd,0
+ST.1,WK,ST.1_WK_0_96,Mjódd,0
+ST.1,WK,ST.1_WK_0_97,Mjódd,0
+ST.1,WK,ST.1_WK_0_98,Mjódd,0
+ST.1,WK,ST.1_WK_0_99,Mjódd,0
+ST.1,WK,ST.1_WK_0_100,Mjódd,0
+ST.1,WK,ST.1_WK_0_101,Mjódd,0
+ST.1,WK,ST.1_WK_0_102,Mjódd,0
+ST.1,WK,ST.1_WK_0_103,Mjódd,0
+ST.1,WK,ST.1_WK_0_104,Mjódd,0
+ST.1,WK,ST.1_WK_0_105,Mjódd,0
+ST.1,WK,ST.1_WK_0_106,Mjódd,0
+ST.1,WK,ST.1_WK_0_107,Mjódd,0
+ST.1,WK,ST.1_WK_0_108,Mjódd,0
+ST.1,WK,ST.1_WK_0_109,Mjódd,0
+ST.1,WK,ST.1_WK_0_110,Mjódd,0
+ST.1,WK,ST.1_WK_1_111,Hlemmur,1
+ST.1,WK,ST.1_WK_1_112,Hlemmur,1
+ST.1,WK,ST.1_WK_1_113,Hlemmur,1
+ST.1,WK,ST.1_WK_1_114,Hlemmur,1
+ST.1,WK,ST.1_WK_1_115,Hlemmur,1
+ST.1,WK,ST.1_WK_1_116,Hlemmur,1
+ST.1,WK,ST.1_WK_1_117,Hlemmur,1
+ST.1,WK,ST.1_WK_1_118,Hlemmur,1
+ST.1,WK,ST.1_WK_1_119,Hlemmur,1
+ST.1,WK,ST.1_WK_1_120,Hlemmur,1
+ST.1,WK,ST.1_WK_1_121,Hlemmur,1
+ST.1,WK,ST.1_WK_1_122,Hlemmur,1
+ST.1,WK,ST.1_WK_1_123,Hlemmur,1
+ST.1,WK,ST.1_WK_1_124,Hlemmur,1
+ST.1,WK,ST.1_WK_1_125,Hlemmur,1
+ST.1,WK,ST.1_WK_1_126,Hlemmur,1
+ST.1,WK,ST.1_WK_1_127,Hlemmur,1
+ST.1,WK,ST.1_WK_1_128,Hlemmur,1
+ST.1,WK,ST.1_WK_1_129,Hlemmur,1
+ST.1,WK,ST.1_WK_1_130,Hlemmur,1
+ST.1,WK,ST.1_WK_1_131,Hlemmur,1
+ST.1,WK,ST.1_WK_1_132,Hlemmur,1
+ST.1,WK,ST.1_WK_1_133,Hlemmur,1
+ST.1,WK,ST.1_WK_1_134,Hlemmur,1
+ST.1,WK,ST.1_WK_1_135,Hlemmur,1
+ST.1,WK,ST.1_WK_1_136,Hlemmur,1
+ST.1,WK,ST.1_WK_1_137,Hlemmur,1
+ST.1,WK,ST.1_WK_1_138,Hlemmur,1
+ST.1,WK,ST.1_WK_1_139,Hlemmur,1
+ST.1,WK,ST.1_WK_1_140,Hlemmur,1
+ST.1,WK,ST.1_WK_1_141,Hlemmur,1
+ST.1,WK,ST.1_WK_1_142,Hlemmur,1
+ST.1,WK,ST.1_WK_1_143,Hlemmur,1
+ST.1,WK,ST.1_WK_1_144,Hlemmur,1
+ST.1,WK,ST.1_WK_1_145,Hlemmur,1
+ST.1,WK,ST.1_WK_1_146,Hlemmur,1
+ST.1,WK,ST.1_WK_1_147,Hlemmur,1
+ST.1,WK,ST.1_WK_1_148,Hlemmur,1
+ST.1,WK,ST.1_WK_1_149,Hlemmur,1
+ST.1,WK,ST.1_WK_1_150,Hlemmur,1
+ST.1,WK,ST.1_WK_1_151,Hlemmur,1
+ST.1,WK,ST.1_WK_1_152,Hlemmur,1
+ST.1,WK,ST.1_WK_1_153,Hlemmur,1
+ST.1,WK,ST.1_WK_1_154,Hlemmur,1
+ST.1,WK,ST.1_WK_1_155,Hlemmur,1
+ST.1,WK,ST.1_WK_1_156,Hlemmur,1
+ST.1,WK,ST.1_WK_1_157,Hlemmur,1
+ST.1,WK,ST.1_WK_1_158,Hlemmur,1
+ST.1,WK,ST.1_WK_1_159,Hlemmur,1
+ST.1,WK,ST.1_WK_1_160,Hlemmur,1
+ST.1,WK,ST.1_WK_1_161,Hlemmur,1
+ST.1,WK,ST.1_WK_1_162,Hlemmur,1
+ST.1,WK,ST.1_WK_1_163,Hlemmur,1
+ST.1,WK,ST.1_WK_1_164,Hlemmur,1
+ST.1,WK,ST.1_WK_1_165,Hlemmur,1
+ST.1,WK,ST.1_WK_1_166,Hlemmur,1
+ST.1,WK,ST.1_WK_1_167,Hlemmur,1
+ST.1,WK,ST.1_WK_1_168,Hlemmur,1
+ST.1,WK,ST.1_WK_1_169,Hlemmur,1
+ST.1,WK,ST.1_WK_1_170,Hlemmur,1
+ST.1,WK,ST.1_WK_1_171,Hlemmur,1
+ST.1,WK,ST.1_WK_1_172,Hlemmur,1
+ST.1,WK,ST.1_WK_1_173,Hlemmur,1
+ST.1,WK,ST.1_WK_1_174,Hlemmur,1
+ST.1,WK,ST.1_WK_1_175,Hlemmur,1
+ST.1,WK,ST.1_WK_1_176,Hlemmur,1
+ST.1,WK,ST.1_WK_1_177,Hlemmur,1
+ST.1,WK,ST.1_WK_1_178,Hlemmur,1
+ST.1,WK,ST.1_WK_1_179,Hlemmur,1
+ST.1,WK,ST.1_WK_1_180,Hlemmur,1
+ST.1,WK,ST.1_WK_1_181,Hlemmur,1
+ST.1,WK,ST.1_WK_1_182,Hlemmur,1
+ST.1,WK,ST.1_WK_1_183,Hlemmur,1
+ST.1,WK,ST.1_WK_1_184,Hlemmur,1
+ST.1,WK,ST.1_WK_1_185,Hlemmur,1
+ST.1,WK,ST.1_WK_1_186,Hlemmur,1
+ST.1,WK,ST.1_WK_1_187,Hlemmur,1
+ST.1,WK,ST.1_WK_1_188,Hlemmur,1
+ST.1,WK,ST.1_WK_1_189,Hlemmur,1
+ST.1,WK,ST.1_WK_1_190,Hlemmur,1
+ST.1,WK,ST.1_WK_1_191,Hlemmur,1
+ST.1,WK,ST.1_WK_1_192,Hlemmur,1
+ST.1,WK,ST.1_WK_1_193,Hlemmur,1
+ST.1,WK,ST.1_WK_1_194,Hlemmur,1
+ST.1,WK,ST.1_WK_1_195,Hlemmur,1
+ST.1,WK,ST.1_WK_1_196,Hlemmur,1
+ST.1,WK,ST.1_WK_1_197,Hlemmur,1
+ST.1,WK,ST.1_WK_1_198,Hlemmur,1
+ST.1,WK,ST.1_WK_1_199,Hlemmur,1
+ST.1,WK,ST.1_WK_1_200,Hlemmur,1
+ST.1,WK,ST.1_WK_1_201,Hlemmur,1
+ST.1,WK,ST.1_WK_1_202,Hlemmur,1
+ST.1,WK,ST.1_WK_1_203,Hlemmur,1
+ST.1,WK,ST.1_WK_1_204,Hlemmur,1
+ST.1,WK,ST.1_WK_1_205,Hlemmur,1
+ST.1,WK,ST.1_WK_1_206,Hlemmur,1
+ST.1,WK,ST.1_WK_1_207,Hlemmur,1
+ST.1,WK,ST.1_WK_1_208,Hlemmur,1
+ST.1,WK,ST.1_WK_1_209,Hlemmur,1
+ST.1,WK,ST.1_WK_1_210,Hlemmur,1
+ST.1,WK,ST.1_WK_1_211,Hlemmur,1
+ST.1,WK,ST.1_WK_1_212,Hlemmur,1
+ST.1,WK,ST.1_WK_1_213,Hlemmur,1
+ST.1,WK,ST.1_WK_1_214,Hlemmur,1
+ST.1,WK,ST.1_WK_1_215,Hlemmur,1
+ST.1,WK,ST.1_WK_1_216,Hlemmur,1
+ST.1,WK,ST.1_WK_1_217,Hlemmur,1
+ST.1,WK,ST.1_WK_1_218,Hlemmur,1
+ST.1,WK,ST.1_WK_1_219,Hlemmur,1
+ST.1,WE,ST.1_WE_0_220,Mjódd,0
+ST.1,WE,ST.1_WE_0_221,Mjódd,0
+ST.1,WE,ST.1_WE_0_222,Mjódd,0
+ST.1,WE,ST.1_WE_0_223,Mjódd,0
+ST.1,WE,ST.1_WE_0_224,Mjódd,0
+ST.1,WE,ST.1_WE_0_225,Mjódd,0
+ST.1,WE,ST.1_WE_0_226,Mjódd,0
+ST.1,WE,ST.1_WE_0_227,Mjódd,0
+ST.1,WE,ST.1_WE_0_228,Mjódd,0
+ST.1,WE,ST.1_WE_0_229,Mjódd,0
+ST.1,WE,ST.1_WE_0_230,Mjódd,0
+ST.1,WE,ST.1_WE_0_231,Mjódd,0
+ST.1,WE,ST.1_WE_0_232,Mjódd,0
+ST.1,WE,ST.1_WE_0_233,Mjódd,0
+ST.1,WE,ST.1_WE_0_234,Mjódd,0
+ST.1,WE,ST.1_WE_0_235,Mjódd,0
+ST.1,WE,ST.1_WE_0_236,Mjódd,0
+ST.1,WE,ST.1_WE_0_237,Mjódd,0
+ST.1,WE,ST.1_WE_0_238,Mjódd,0
+ST.1,WE,ST.1_WE_0_239,Mjódd,0
+ST.1,WE,ST.1_WE_0_240,Mjódd,0
+ST.1,WE,ST.1_WE_0_241,Mjódd,0
+ST.1,WE,ST.1_WE_0_242,Mjódd,0
+ST.1,WE,ST.1_WE_0_243,Mjódd,0
+ST.1,WE,ST.1_WE_0_244,Mjódd,0
+ST.1,WE,ST.1_WE_0_245,Mjódd,0
+ST.1,WE,ST.1_WE_0_246,Mjódd,0
+ST.1,WE,ST.1_WE_0_247,Mjódd,0
+ST.1,WE,ST.1_WE_0_248,Mjódd,0
+ST.1,WE,ST.1_WE_0_249,Mjódd,0
+ST.1,WE,ST.1_WE_0_250,Mjódd,0
+ST.1,WE,ST.1_WE_0_251,Mjódd,0
+ST.1,WE,ST.1_WE_0_252,Mjódd,0
+ST.1,WE,ST.1_WE_0_253,Mjódd,0
+ST.1,WE,ST.1_WE_0_254,Mjódd,0
+ST.1,WE,ST.1_WE_0_255,Mjódd,0
+ST.1,WE,ST.1_WE_0_256,Mjódd,0
+ST.1,WE,ST.1_WE_0_257,Mjódd,0
+ST.1,WE,ST.1_WE_0_258,Mjódd,0
+ST.1,WE,ST.1_WE_0_259,Mjódd,0
+ST.1,WE,ST.1_WE_0_260,Mjódd,0
+ST.1,WE,ST.1_WE_0_261,Mjódd,0
+ST.1,WE,ST.1_WE_0_262,Mjódd,0
+ST.1,WE,ST.1_WE_0_263,Mjódd,0
+ST.1,WE,ST.1_WE_0_264,Mjódd,0
+ST.1,WE,ST.1_WE_0_265,Mjódd,0
+ST.1,WE,ST.1_WE_1_266,Hlemmur,1
+ST.1,WE,ST.1_WE_1_267,Hlemmur,1
+ST.1,WE,ST.1_WE_1_268,Hlemmur,1
+ST.1,WE,ST.1_WE_1_269,Hlemmur,1
+ST.1,WE,ST.1_WE_1_270,Hlemmur,1
+ST.1,WE,ST.1_WE_1_271,Hlemmur,1
+ST.1,WE,ST.1_WE_1_272,Hlemmur,1
+ST.1,WE,ST.1_WE_1_273,Hlemmur,1
+ST.1,WE,ST.1_WE_1_274,Hlemmur,1
+ST.1,WE,ST.1_WE_1_275,Hlemmur,1
+ST.1,WE,ST.1_WE_1_276,Hlemmur,1
+ST.1,WE,ST.1_WE_1_277,Hlemmur,1
+ST.1,WE,ST.1_WE_1_278,Hlemmur,1
+ST.1,WE,ST.1_WE_1_279,Hlemmur,1
+ST.1,WE,ST.1_WE_1_280,Hlemmur,1
+ST.1,WE,ST.1_WE_1_281,Hlemmur,1
+ST.1,WE,ST.1_WE_1_282,Hlemmur,1
+ST.1,WE,ST.1_WE_1_283,Hlemmur,1
+ST.1,WE,ST.1_WE_1_284,Hlemmur,1
+ST.1,WE,ST.1_WE_1_285,Hlemmur,1
+ST.1,WE,ST.1_WE_1_286,Hlemmur,1
+ST.1,WE,ST.1_WE_1_287,Hlemmur,1
+ST.1,WE,ST.1_WE_1_288,Hlemmur,1
+ST.1,WE,ST.1_WE_1_289,Hlemmur,1
+ST.1,WE,ST.1_WE_1_290,Hlemmur,1
+ST.1,WE,ST.1_WE_1_291,Hlemmur,1
+ST.1,WE,ST.1_WE_1_292,Hlemmur,1
+ST.1,WE,ST.1_WE_1_293,Hlemmur,1
+ST.1,WE,ST.1_WE_1_294,Hlemmur,1
+ST.1,WE,ST.1_WE_1_295,Hlemmur,1
+ST.1,WE,ST.1_WE_1_296,Hlemmur,1
+ST.1,WE,ST.1_WE_1_297,Hlemmur,1
+ST.1,WE,ST.1_WE_1_298,Hlemmur,1
+ST.1,WE,ST.1_WE_1_299,Hlemmur,1
+ST.1,WE,ST.1_WE_1_300,Hlemmur,1
+ST.1,WE,ST.1_WE_1_301,Hlemmur,1
+ST.1,WE,ST.1_WE_1_302,Hlemmur,1
+ST.1,WE,ST.1_WE_1_303,Hlemmur,1
+ST.1,WE,ST.1_WE_1_304,Hlemmur,1
+ST.1,WE,ST.1_WE_1_305,Hlemmur,1
+ST.1,WE,ST.1_WE_1_306,Hlemmur,1
+ST.1,WE,ST.1_WE_1_307,Hlemmur,1
+ST.1,WE,ST.1_WE_1_308,Hlemmur,1
+ST.1,WE,ST.1_WE_1_309,Hlemmur,1
+ST.1,WE,ST.1_WE_1_310,Hlemmur,1
+ST.1,WE,ST.1_WE_1_311,Hlemmur,1
+ST.3,WK,ST.3_WK_0_312,Mjódd,0
+ST.3,WK,ST.3_WK_0_313,Mjódd,0
+ST.3,WK,ST.3_WK_0_314,Mjódd,0
+ST.3,WK,ST.3_WK_0_315,Mjódd,0
+ST.3,WK,ST.3_WK_0_316,Mjódd,0
+ST.3,WK,ST.3_WK_0_317,Mjódd,0
+ST.3,WK,ST.3_WK_0_318,Mjódd,0
+ST.3,WK,ST.3_WK_0_319,Mjódd,0
+ST.3,WK,ST.3_WK_0_320,Mjódd,0
+ST.3,WK,ST.3_WK_0_321,Mjódd,0
+ST.3,WK,ST.3_WK_0_322,Mjódd,0
+ST.3,WK,ST.3_WK_0_323,Mjódd,0
+ST.3,WK,ST.3_WK_0_324,Mjódd,0
+ST.3,WK,ST.3_WK_0_325,Mjódd,0
+ST.3,WK,ST.3_WK_0_326,Mjódd,0
+ST.3,WK,ST.3_WK_0_327,Mjódd,0
+ST.3,WK,ST.3_WK_0_328,Mjódd,0
+ST.3,WK,ST.3_WK_0_329,Mjódd,0
+ST.3,WK,ST.3_WK_0_330,Mjódd,0
+ST.3,WK,ST.3_WK_0_331,Mjódd,0
+ST.3,WK,ST.3_WK_0_332,Mjódd,0
+ST.3,WK,ST.3_WK_0_333,Mjódd,0
+ST.3,WK,ST.3_WK_0_334,Mjódd,0
+ST.3,WK,ST.3_WK_0_335,Mjódd,0
+ST.3,WK,ST.3_WK_0_336,Mjódd,0
+ST.3,WK,ST.3_WK_0_337,Mjódd,0
+ST.3,WK,ST.3_WK_0_338,Mjódd,0
+ST.3,WK,ST.3_WK_0_339,Mjódd,0
+ST.3,WK,ST.3_WK_0_340,Mjódd,0
+ST.3,WK,ST.3_WK_0_341,Mjódd,0
+ST.3,WK,ST.3_WK_0_342,Mjódd,0
+ST.3,WK,ST.3_WK_0_343,Mjódd,0
+ST.3,WK,ST.3_WK_0_344,Mjódd,0
+ST.3,WK,ST.3_WK_0_345,Mjódd,0
+ST.3,WK,ST.3_WK_0_346,Mjódd,0
+ST.3,WK,ST.3_WK_0_347,Mjódd,0
+ST.3,WK,ST.3_WK_0_348,Mjódd,0
+ST.3,WK,ST.3_WK_0_349,Mjódd,0
+ST.3,WK,ST.3_WK_0_350,Mjódd,0
+ST.3,WK,ST.3_WK_0_351,Mjódd,0
+ST.3,WK,ST.3_WK_0_352,Mjódd,0
+ST.3,WK,ST.3_WK_0_353,Mjódd,0
+ST.3,WK,ST.3_WK_0_354,Mjódd,0
+ST.3,WK,ST.3_WK_0_355,Mjódd,0
+ST.3,WK,ST.3_WK_0_356,Mjódd,0
+ST.3,WK,ST.3_WK_0_357,Mjódd,0
+ST.3,WK,ST.3_WK_0_358,Mjódd,0
+ST.3,WK,ST.3_WK_0_359,Mjódd,0
+ST.3,WK,ST.3_WK_0_360,Mjódd,0
+ST.3,WK,ST.3_WK_0_361,Mjódd,0
+ST.3,WK,ST.3_WK_0_362,Mjódd,0
+ST.3,WK,ST.3_WK_0_363,Mjódd,0
+ST.3,WK,ST.3_WK_0_364,Mjódd,0
+ST.3,WK,ST.3_WK_0_365,Mjódd,0
+ST.3,WK,ST.3_WK_0_366,Mjódd,0
+ST.3,WK,ST.3_WK_0_367,Mjódd,0
+ST.3,WK,ST.3_WK_0_368,Mjódd,0
+ST.3,WK,ST.3_WK_0_369,Mjódd,0
+ST.3,WK,ST.3_WK_0_370,Mjódd,0
+ST.3,WK,ST.3_WK_0_371,Mjódd,0
+ST.3,WK,ST.3_WK_0_372,Mjódd,0
+ST.3,WK,ST.3_WK_0_373,Mjódd,0
+ST.3,WK,ST.3_WK_0_374,Mjódd,0
+ST.3,WK,ST.3_WK_0_375,Mjódd,0
+ST.3,WK,ST.3_WK_0_376,Mjódd,0
+ST.3,WK,ST.3_WK_0_377,Mjódd,0
+ST.3,WK,ST.3_WK_0_378,Mjódd,0
+ST.3,WK,ST.3_WK_0_379,Mjódd,0
+ST.3,WK,ST.3_WK_0_380,Mjódd,0
+ST.3,WK,ST.3_WK_0_381,Mjódd,0
+ST.3,WK,ST.3_WK_0_382,Mjódd,0
+ST.3,WK,ST.3_WK_0_383,Mjódd,0
+ST.3,WK,ST.3_WK_0_384,Mjódd,0
+ST.3,WK,ST.3_WK_1_385,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_386,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_387,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_388,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_389,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_390,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_391,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_392,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_393,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_394,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_395,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_396,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_397,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_398,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_399,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_400,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_401,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_402,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_403,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_404,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_405,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_406,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_407,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_408,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_409,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_410,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_411,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_412,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_413,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_414,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_415,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_416,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_417,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_418,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_419,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_420,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_421,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_422,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_423,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_424,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_425,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_426,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_427,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_428,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_429,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_430,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_431,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_432,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_433,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_434,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_435,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_436,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_437,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_438,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_439,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_440,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_441,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_442,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_443,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_444,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_445,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_446,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_447,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_448,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_449,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_450,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_451,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_452,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_453,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_454,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_455,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_456,Lækjartorg,1
+ST.3,WK,ST.3_WK_1_457,Lækjartorg,1
+ST.3,WE,ST.3_WE_0_458,Mjódd,0
+ST.3,WE,ST.3_WE_0_459,Mjódd,0
+ST.3,WE,ST.3_WE_0_460,Mjódd,0
+ST.3,WE,ST.3_WE_0_461,Mjódd,0
+ST.3,WE,ST.3_WE_0_462,Mjódd,0
+ST.3,WE,ST.3_WE_0_463,Mjódd,0
+ST.3,WE,ST.3_WE_0_464,Mjódd,0
+ST.3,WE,ST.3_WE_0_465,Mjódd,0
+ST.3,WE,ST.3_WE_0_466,Mjódd,0
+ST.3,WE,ST.3_WE_0_467,Mjódd,0
+ST.3,WE,ST.3_WE_0_468,Mjódd,0
+ST.3,WE,ST.3_WE_0_469,Mjódd,0
+ST.3,WE,ST.3_WE_0_470,Mjódd,0
+ST.3,WE,ST.3_WE_0_471,Mjódd,0
+ST.3,WE,ST.3_WE_0_472,Mjódd,0
+ST.3,WE,ST.3_WE_0_473,Mjódd,0
+ST.3,WE,ST.3_WE_0_474,Mjódd,0
+ST.3,WE,ST.3_WE_0_475,Mjódd,0
+ST.3,WE,ST.3_WE_0_476,Mjódd,0
+ST.3,WE,ST.3_WE_0_477,Mjódd,0
+ST.3,WE,ST.3_WE_0_478,Mjódd,0
+ST.3,WE,ST.3_WE_0_479,Mjódd,0
+ST.3,WE,ST.3_WE_0_480,Mjódd,0
+ST.3,WE,ST.3_WE_0_481,Mjódd,0
+ST.3,WE,ST.3_WE_0_482,Mjódd,0
+ST.3,WE,ST.3_WE_0_483,Mjódd,0
+ST.3,WE,ST.3_WE_0_484,Mjódd,0
+ST.3,WE,ST.3_WE_0_485,Mjódd,0
+ST.3,WE,ST.3_WE_0_486,Mjódd,0
+ST.3,WE,ST.3_WE_0_487,Mjódd,0
+ST.3,WE,ST.3_WE_0_488,Mjódd,0
+ST.3,WE,ST.3_WE_1_489,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_490,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_491,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_492,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_493,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_494,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_495,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_496,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_497,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_498,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_499,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_500,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_501,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_502,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_503,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_504,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_505,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_506,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_507,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_508,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_509,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_510,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_511,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_512,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_513,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_514,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_515,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_516,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_517,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_518,Lækjartorg,1
+ST.3,WE,ST.3_WE_1_519,Lækjartorg,1
+ST.14,WK,ST.14_WK_0_520,Hlemmur,0
+ST.14,WK,ST.14_WK_0_521,Hlemmur,0
+ST.14,WK,ST.14_WK_0_522,Hlemmur,0
+ST.14,WK,ST.14_WK_0_523,Hlemmur,0
+ST.14,WK,ST.14_WK_0_524,Hlemmur,0
+ST.14,WK,ST.14_WK_0_525,Hlemmur,0
+ST.14,WK,ST.14_WK_0_526,Hlemmur,0
+ST.14,WK,ST.14_WK_0_527,Hlemmur,0
+ST.14,WK,ST.14_WK_0_528,Hlemmur,0
+ST.14,WK,ST.14_WK_0_529,Hlemmur,0
+ST.14,WK,ST.14_WK_0_530,Hlemmur,0
+ST.14,WK,ST.14_WK_0_531,Hlemmur,0
+ST.14,WK,ST.14_WK_0_532,Hlemmur,0
+ST.14,WK,ST.14_WK_0_533,Hlemmur,0
+ST.14,WK,ST.14_WK_0_534,Hlemmur,0
+ST.14,WK,ST.14_WK_0_535,Hlemmur,0
+ST.14,WK,ST.14_WK_0_536,Hlemmur,0
+ST.14,WK,ST.14_WK_0_537,Hlemmur,0
+ST.14,WK,ST.14_WK_0_538,Hlemmur,0
+ST.14,WK,ST.14_WK_0_539,Hlemmur,0
+ST.14,WK,ST.14_WK_0_540,Hlemmur,0
+ST.14,WK,ST.14_WK_0_541,Hlemmur,0
+ST.14,WK,ST.14_WK_0_542,Hlemmur,0
+ST.14,WK,ST.14_WK_0_543,Hlemmur,0
+ST.14,WK,ST.14_WK_0_544,Hlemmur,0
+ST.14,WK,ST.14_WK_0_545,Hlemmur,0
+ST.14,WK,ST.14_WK_0_546,Hlemmur,0
+ST.14,WK,ST.14_WK_0_547,Hlemmur,0
+ST.14,WK,ST.14_WK_0_548,Hlemmur,0
+ST.14,WK,ST.14_WK_0_549,Hlemmur,0
+ST.14,WK,ST.14_WK_0_550,Hlemmur,0
+ST.14,WK,ST.14_WK_0_551,Hlemmur,0
+ST.14,WK,ST.14_WK_0_552,Hlemmur,0
+ST.14,WK,ST.14_WK_0_553,Hlemmur,0
+ST.14,WK,ST.14_WK_0_554,Hlemmur,0
+ST.14,WK,ST.14_WK_0_555,Hlemmur,0
+ST.14,WK,ST.14_WK_0_556,Hlemmur,0
+ST.14,WK,ST.14_WK_0_557,Hlemmur,0
+ST.14,WK,ST.14_WK_0_558,Hlemmur,0
+ST.14,WK,ST.14_WK_0_559,Hlemmur,0
+ST.14,WK,ST.14_WK_0_560,Hlemmur,0
+ST.14,WK,ST.14_WK_0_561,Hlemmur,0
+ST.14,WK,ST.14_WK_0_562,Hlemmur,0
+ST.14,WK,ST.14_WK_0_563,Hlemmur,0
+ST.14,WK,ST.14_WK_0_564,Hlemmur,0
+ST.14,WK,ST.14_WK_0_565,Hlemmur,0
+ST.14,WK,ST.14_WK_0_566,Hlemmur,0
+ST.14,WK,ST.14_WK_0_567,Hlemmur,0
+ST.14,WK,ST.14_WK_0_568,Hlemmur,0
+ST.14,WK,ST.14_WK_0_569,Hlemmur,0
+ST.14,WK,ST.14_WK_0_570,Hlemmur,0
+ST.14,WK,ST.14_WK_0_571,Hlemmur,0
+ST.14,WK,ST.14_WK_0_572,Hlemmur,0
+ST.14,WK,ST.14_WK_0_573,Hlemmur,0
+ST.14,WK,ST.14_WK_0_574,Hlemmur,0
+ST.14,WK,ST.14_WK_1_575,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_576,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_577,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_578,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_579,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_580,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_581,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_582,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_583,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_584,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_585,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_586,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_587,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_588,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_589,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_590,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_591,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_592,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_593,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_594,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_595,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_596,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_597,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_598,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_599,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_600,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_601,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_602,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_603,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_604,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_605,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_606,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_607,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_608,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_609,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_610,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_611,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_612,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_613,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_614,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_615,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_616,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_617,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_618,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_619,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_620,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_621,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_622,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_623,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_624,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_625,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_626,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_627,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_628,Háskóli Íslands,1
+ST.14,WK,ST.14_WK_1_629,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_0_630,Hlemmur,0
+ST.14,WE,ST.14_WE_0_631,Hlemmur,0
+ST.14,WE,ST.14_WE_0_632,Hlemmur,0
+ST.14,WE,ST.14_WE_0_633,Hlemmur,0
+ST.14,WE,ST.14_WE_0_634,Hlemmur,0
+ST.14,WE,ST.14_WE_0_635,Hlemmur,0
+ST.14,WE,ST.14_WE_0_636,Hlemmur,0
+ST.14,WE,ST.14_WE_0_637,Hlemmur,0
+ST.14,WE,ST.14_WE_0_638,Hlemmur,0
+ST.14,WE,ST.14_WE_0_639,Hlemmur,0
+ST.14,WE,ST.14_WE_0_640,Hlemmur,0
+ST.14,WE,ST.14_WE_0_641,Hlemmur,0
+ST.14,WE,ST.14_WE_0_642,Hlemmur,0
+ST.14,WE,ST.14_WE_0_643,Hlemmur,0
+ST.14,WE,ST.14_WE_0_644,Hlemmur,0
+ST.14,WE,ST.14_WE_0_645,Hlemmur,0
+ST.14,WE,ST.14_WE_0_646,Hlemmur,0
+ST.14,WE,ST.14_WE_0_647,Hlemmur,0
+ST.14,WE,ST.14_WE_0_648,Hlemmur,0
+ST.14,WE,ST.14_WE_0_649,Hlemmur,0
+ST.14,WE,ST.14_WE_0_650,Hlemmur,0
+ST.14,WE,ST.14_WE_0_651,Hlemmur,0
+ST.14,WE,ST.14_WE_0_652,Hlemmur,0
+ST.14,WE,ST.14_WE_1_653,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_654,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_655,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_656,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_657,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_658,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_659,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_660,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_661,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_662,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_663,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_664,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_665,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_666,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_667,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_668,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_669,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_670,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_671,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_672,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_673,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_674,Háskóli Íslands,1
+ST.14,WE,ST.14_WE_1_675,Háskóli Íslands,1

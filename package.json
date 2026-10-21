@@ -1,0 +1,29 @@
+{
+  "name": "bus-countdown",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Countdown to the next Strætó bus at a stop in Iceland",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "dev:sample": "node scripts/dev.js --sample",
+    "server": "node server/index.js",
+    "server:sample": "node server/index.js --sample",
+    "build": "vite build",
+    "start": "vite build && node server/index.js --production"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "optionalDependencies": {
+    "gtfs-realtime-bindings": "^1.1.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.3",
+    "vite": "^5.4.10"
+  }
+}

@@ -1,0 +1,2 @@
+agency_id,agency_name,agency_url,agency_timezone
+SAMPLE,Sample Transit (fake data),https://example.com,Atlantic/Reykjavik

@@ -1,0 +1,4 @@
+route_id,agency_id,route_short_name,route_long_name,route_type,route_color,route_text_color
+ST.1,SAMPLE,1,Hlemmur - Mjódd,3,FFD200,000000
+ST.3,SAMPLE,3,Lækjartorg - Mjódd,3,E0002A,FFFFFF
+ST.14,SAMPLE,14,Háskóli - Hlemmur,3,0071BC,FFFFFF
