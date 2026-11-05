@@ -35,6 +35,12 @@ export default function StopMap({ onPick, userPos, StopLine }) {
   const mapRef = useRef(null); // { L, map, markers: Map(key -> marker), me }
   const [state, setState] = useState('idle'); // idle | loading | ready | failed
   const [picked, setPicked] = useState(null); // { key, name, lines }
+  const pickRow = useRef(null);
+
+  // make sure the tapped stop's row below the map is on screen
+  useEffect(() => {
+    if (picked) pickRow.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }, [picked]);
 
   // Load Leaflet and the stop list once the map is close to the screen
   useEffect(() => {
@@ -175,7 +181,7 @@ export default function StopMap({ onPick, userPos, StopLine }) {
       </div>
       {picked ? (
         // same row as the search / nearby results; tap to open the stop
-        <ul className="list map-pick">
+        <ul className="list map-pick" ref={pickRow}>
           <li>
             <button className="list-item" onClick={() => onPick(picked.key)}>
               <StopLine name={picked.name} lines={picked.lines} />

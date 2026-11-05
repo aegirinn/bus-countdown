@@ -207,7 +207,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 /* map of all stops */
 .map-panel { padding-bottom: 12px; }
 .map-box {
-  position: relative; height: 340px; border-radius: 12px; overflow: hidden;
+  position: relative; height: clamp(220px, 36vh, 340px); border-radius: 12px; overflow: hidden; /* shorter on phones */
   border: 1px solid var(--line); background: var(--bg); isolation: isolate; /* keep Leaflet's layers inside */
 }
 .map { position: absolute; inset: 0; background: var(--bg); font: inherit; }
