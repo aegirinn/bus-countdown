@@ -49,6 +49,8 @@ export const STRINGS = {
     bellOff: 'Hætta við bjöllu',
     bellArmed: 'Bjallan hringir þegar 5 mín eru í vagninn. Hafðu síðuna opna.',
     bellRang: 'Vagninn kemur eftir um 5 mín.',
+    stopsOnRoute: (r) => `Stoppistöðvar leiðar ${r ?? ''}`.trim(),
+    stopGone: 'Þessi stoppistöð er ekki lengur í tímatöflunni og var fjarlægð úr listunum. Leitaðu að henni aftur.',
   },
   en: {
     brand: 'Next bus',
@@ -91,6 +93,8 @@ export const STRINGS = {
     bellOff: 'Cancel the bell',
     bellArmed: 'The bell will ring when the bus is 5 min away. Keep this page open.',
     bellRang: 'The bus is about 5 min away.',
+    stopsOnRoute: (r) => `Stops on route ${r ?? ''}`.trim(),
+    stopGone: 'That stop is no longer in the timetable and was removed from your lists. Please search for it again.',
   },
 };
 

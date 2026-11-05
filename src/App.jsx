@@ -247,6 +247,73 @@ function Chips({ options, value, onChange, render }) {
   );
 }
 
+const tripCache = new Map(); // `${tripId}|${date}` -> stops
+
+/** The stops the next bus makes, as a horizontal line: passed stops faded, this stop highlighted. */
+function RouteStops({ bus, route, onOpenStop }) {
+  const t = useT();
+  const [stops, setStops] = useState(() => tripCache.get(`${bus.tripId}|${bus.serviceDate}`) || null);
+  const scroller = useRef(null);
+  const here = useRef(null);
+  const cacheKey = `${bus.tripId}|${bus.serviceDate}`;
+
+  useEffect(() => {
+    let alive = true;
+    const hit = tripCache.get(cacheKey);
+    if (hit) return setStops(hit);
+    setStops(null);
+    api
+      .trip(bus.tripId, bus.serviceDate)
+      .then((r) => {
+        tripCache.set(cacheKey, r.stops);
+        if (alive) setStops(r.stops);
+      })
+      .catch(() => alive && setStops([]));
+    return () => {
+      alive = false;
+    };
+  }, [cacheKey]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // which entry is "your" stop: same platform and same time as the departure shown in the counter
+  const hereIdx = stops ? Math.max(0, stops.findIndex((s) => s.stopId === bus.stopId && s.time === bus.scheduled)) : -1;
+  const delay = bus.live ? bus.expected - bus.scheduled : 0;
+
+  // bring "your" stop into view, with one passed stop showing to its left
+  useEffect(() => {
+    if (!here.current || !scroller.current) return;
+    const prev = here.current.previousElementSibling || here.current;
+    scroller.current.scrollLeft = prev.offsetLeft - scroller.current.offsetLeft - 8;
+  }, [stops, hereIdx]);
+
+  if (!stops || stops.length < 2) return null;
+  const color = route?.color || 'var(--ink)';
+
+  return (
+    <section className="panel route-panel" aria-label={t.stopsOnRoute(route?.name)}>
+      <p className="label">{t.stopsOnRoute(route?.name)}</p>
+      <ol className="route-line" ref={scroller} style={{ '--route': color }}>
+        {stops.map((s, i) => {
+          const state = i < hereIdx ? 'past' : i === hereIdx ? 'here' : 'next';
+          return (
+            <li key={`${s.stopId}|${i}`} className={`rs ${state}`} ref={i === hereIdx ? here : null}>
+              <button
+                className="rs-btn"
+                onClick={() => s.key && i !== hereIdx && onOpenStop(s.key)}
+                disabled={!s.key || i === hereIdx}
+                aria-current={i === hereIdx ? 'location' : undefined}
+              >
+                <span className="rs-dot" />
+                <span className="rs-name">{s.name}</span>
+                <span className="rs-time">{clock(s.time + (i >= hereIdx ? delay : 0))}</span>
+              </button>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
+  );
+}
+
 function Board({ stop, route, to, setSel, onBack, isFav, toggleFav, realtime }) {
   const t = useT();
   const now = useNow(1000);
@@ -349,6 +416,14 @@ function Board({ stop, route, to, setSel, onBack, isFav, toggleFav, realtime }) 
         )}
       </section>
 
+      {route && next && (
+        <RouteStops
+          bus={next}
+          route={routesById[next.routeId]}
+          onOpenStop={(key) => setSel({ stop: key, route, to: null })}
+        />
+      )}
+
       <section className="hero" aria-live="polite">
         {error && !data && <p className="error">{error}</p>}
         {!data && !error && <p className="muted">{t.loading}</p>}
@@ -448,6 +523,7 @@ export default function App() {
   }, [lang, t]);
 
   const setSel = (s) => {
+    if (s.stop) setError('');
     writeHash(s);
     setSelRaw(s);
   };
@@ -463,7 +539,13 @@ export default function App() {
       .stop(sel.stop)
       .then(setStop)
       .catch((e) => {
-        setError(e.message);
+        if (e.status === 404) {
+          // e.g. a saved "Ártún" from before it was split into separate stops: drop it so it can be re-added
+          const keep = (list) => list.filter((x) => x.stop !== sel.stop);
+          setFavs((f) => { const n = keep(f); saveFavs(n); return n; });
+          setRecent((r) => { const n = keep(r); saveList(RECENT_KEY, n); return n; });
+          setError(t.stopGone);
+        } else setError(e.message);
         setSel({});
       });
   }, [sel.stop]); // eslint-disable-line react-hooks/exhaustive-deps

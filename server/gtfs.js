@@ -6,6 +6,8 @@ import { unzip, parseCsv, eachCsvRow } from './files.js';
 export const GTFS_URL = process.env.GTFS_URL || 'https://opendata.straeto.is/data/gtfs/gtfs.zip';
 const MAX_AGE_MS = 24 * 60 * 60 * 1000; // Strætó asks people not to fetch more than ~daily
 export const TZ = 'Atlantic/Reykjavik';
+// Same-named stops closer than this (chained) count as one place: both sides of a street, or a terminal's platforms
+const MERGE_M = Number(process.env.STOP_MERGE_M || 150);
 
 // ---------- helpers ----------
 
@@ -109,6 +111,8 @@ export function loadGtfs(dir) {
   // Stops are grouped by name: a stop name usually has one platform per direction.
   // Hubs name each platform with a letter ("Mjódd A" … "Mjódd E"); those are merged into one
   // stop ("Mjódd") and the letter is reported per departure so people know where to stand.
+  // Only stops that are actually close together are merged: "Ártún A–D" are spread around a big
+  // interchange, and the same street name can exist in several towns.
   const stopRows = readCsv(dir, 'stops.txt').filter((s) => !s.location_type || s.location_type === '0');
   const PLATFORM = /^(.+?) ([A-H])$/;
   const lettered = new Map(); // base name -> number of lettered platforms
@@ -117,24 +121,41 @@ export function loadGtfs(dir) {
     if (m) lettered.set(m[1], (lettered.get(m[1]) || 0) + 1);
   }
 
-  const stopById = new Map();
-  const groups = new Map(); // key -> { key, name, ids, lat, lon }
+  // 1. candidates by base name
+  const byBase = new Map(); // base name -> [{ id, name, platform, lat, lon }]
   for (const s of stopRows) {
-    let name = s.stop_name;
+    let base = s.stop_name;
     let platform = null;
-    const m = PLATFORM.exec(name);
-    if (m && lettered.get(m[1]) >= 2) { name = m[1]; platform = m[2]; } // a lone "Ásland I" stays as it is
-    const key = fold(name).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || s.stop_id;
-    stopById.set(s.stop_id, { id: s.stop_id, name, key, platform });
-    if (!groups.has(key)) groups.set(key, { key, name, folded: fold(name), ids: [], lat: 0, lon: 0 });
-    const g = groups.get(key);
-    g.ids.push(s.stop_id);
-    g.lat += Number(s.stop_lat) || 0;
-    g.lon += Number(s.stop_lon) || 0;
+    const m = PLATFORM.exec(base);
+    if (m && lettered.get(m[1]) >= 2) { base = m[1]; platform = m[2]; } // a lone "Ásland I" stays as it is
+    if (!byBase.has(base)) byBase.set(base, []);
+    byBase.get(base).push({ id: s.stop_id, name: s.stop_name, platform, lat: Number(s.stop_lat) || 0, lon: Number(s.stop_lon) || 0 });
   }
-  for (const g of groups.values()) {
-    g.lat /= g.ids.length;
-    g.lon /= g.ids.length;
+
+  // 2. split each base name into clusters of stops within MERGE_M of each other (chained)
+  const slug = (n) => fold(n).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const stopById = new Map();
+  const groups = new Map(); // key -> { key, name, folded, ids, lat, lon }
+  for (const [base, stops] of byBase) {
+    const clusters = clusterByDistance(stops, MERGE_M);
+    clusters.sort((a, b) => minId(a).localeCompare(minId(b), 'en', { numeric: true })); // stable order
+    clusters.forEach((members, i) => {
+      const letters = members.map((x) => x.platform).filter(Boolean).sort();
+      let name = base;
+      if (clusters.length > 1 && letters.length) name = `${base} ${letters.join('/')}`; // "Ártún A", "Ártún B/C"
+      let key = slug(name) || members[0].id;
+      if (clusters.length > 1 && !letters.length) key = i === 0 ? key : `${key}-${i + 1}`; // same name, other town
+      while (groups.has(key)) key += '-x';
+      const showPlatform = letters.length >= 2; // only worth showing when there's a choice of platforms
+      const g = { key, name, folded: fold(name), ids: [], lat: 0, lon: 0 };
+      for (const x of members) {
+        stopById.set(x.id, { id: x.id, name, key, platform: showPlatform ? x.platform : null });
+        g.ids.push(x.id);
+        g.lat += x.lat / members.length;
+        g.lon += x.lon / members.length;
+      }
+      groups.set(key, g);
+    });
   }
 
   // stop_id -> { sec: Int32Array, trip: Int32Array }, sorted by time.
@@ -209,6 +230,7 @@ export function loadGtfs(dir) {
   }
 
   const activeCache = new Map();
+  const tripCache = new Map(); // trip index -> [{ stopId, sec }]
   function isActive(serviceId, ymd, weekday) {
     const k = `${ymd}|${serviceId}`;
     if (activeCache.has(k)) return activeCache.get(k);
@@ -236,9 +258,9 @@ export function loadGtfs(dir) {
       for (const g of groups.values()) {
         const i = g.folded.indexOf(f);
         if (i === -1) continue;
-        out.push({ g, score: (i === 0 ? 0 : 1) + g.folded.length / 1000 });
+        out.push({ g, score: i === 0 ? 0 : 1 }); // names starting with the query first
       }
-      out.sort((a, b) => a.score - b.score);
+      out.sort((a, b) => a.score - b.score || a.g.name.localeCompare(b.g.name, 'is', { numeric: true }));
       return out.slice(0, limit).map(({ g }) => listStop(g));
     },
 
@@ -251,6 +273,33 @@ export function loadGtfs(dir) {
         .filter((r) => r.id)
         .sort((a, b) => a.name.localeCompare(b.name, 'is', { numeric: true }));
       return { ...publicStop(g), routes: served };
+    },
+
+    /**
+     * Every stop a trip makes, in order, with its scheduled time on the given service day (YYYYMMDD).
+     * Built on demand by scanning the per-stop index (a few ms), then cached.
+     */
+    tripStops(tripId, ymd) {
+      const ti = tripIndex.get(tripId);
+      if (ti === undefined || !/^\d{8}$/.test(ymd)) return null;
+      let stops = tripCache.get(ti);
+      if (!stops) {
+        stops = [];
+        for (const [stopId, list] of byStop) {
+          for (let i = 0; i < list.trip.length; i++) {
+            if (list.trip[i] === ti) stops.push({ stopId, sec: list.sec[i] });
+          }
+        }
+        stops.sort((a, b) => a.sec - b.sec);
+        if (tripCache.size > 500) tripCache.delete(tripCache.keys().next().value);
+        tripCache.set(ti, stops);
+      }
+      const y = Number(ymd.slice(0, 4)), m = Number(ymd.slice(4, 6)), d = Number(ymd.slice(6, 8));
+      const dayStart = midnightMs(new Date(Date.UTC(y, m - 1, d, 12)));
+      return stops.map(({ stopId, sec }) => {
+        const s = stopById.get(stopId);
+        return { stopId, key: s?.key ?? null, name: s?.name ?? stopId, time: dayStart + sec * 1000 };
+      });
     },
 
     nearestStops(lat, lon, limit = 8) {
@@ -332,6 +381,29 @@ function lowerBound(secs, sec) {
   }
   return lo;
 }
+
+/** Single-linkage clustering: stops within `maxM` of any member join that cluster. */
+function clusterByDistance(stops, maxM) {
+  const left = new Set(stops);
+  const clusters = [];
+  while (left.size) {
+    const seed = left.values().next().value;
+    left.delete(seed);
+    const members = [seed];
+    for (let i = 0; i < members.length; i++) {
+      for (const other of [...left]) {
+        if (distanceM(members[i].lat, members[i].lon, other.lat, other.lon) <= maxM) {
+          left.delete(other);
+          members.push(other);
+        }
+      }
+    }
+    clusters.push(members);
+  }
+  return clusters;
+}
+
+const minId = (members) => members.map((m) => m.id).sort()[0];
 
 function distanceM(lat1, lon1, lat2, lon2) {
   const R = 6371000, rad = Math.PI / 180;

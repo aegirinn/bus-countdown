@@ -4,7 +4,7 @@ const BASE = (import.meta.env.VITE_API_BASE || '').replace(/\/$/, '');
 async function get(path) {
   const res = await fetch(BASE + path);
   const body = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(body.error || `Request failed (${res.status})`);
+  if (!res.ok) throw Object.assign(new Error(body.error || `Request failed (${res.status})`), { status: res.status });
   return body;
 }
 
@@ -13,6 +13,7 @@ export const api = {
   search: (q) => get(`/api/stops?q=${encodeURIComponent(q)}`),
   nearby: (lat, lon) => get(`/api/stops?lat=${lat}&lon=${lon}`),
   stop: (key) => get(`/api/stops/${encodeURIComponent(key)}`),
+  trip: (tripId, date) => get(`/api/trips/${encodeURIComponent(tripId)}?date=${date}`),
   arrivals: (key, route, limit = 8) =>
     get(`/api/stops/${encodeURIComponent(key)}/arrivals?limit=${limit}${route ? `&route=${encodeURIComponent(route)}` : ''}`),
 };

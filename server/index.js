@@ -64,6 +64,11 @@ async function api(req, res, url) {
     return stop ? send(res, 200, stop) : send(res, 404, { error: 'Unknown stop' });
   }
 
+  if (parts[1] === 'trips' && parts.length === 3) {
+    const stops = gtfs.tripStops(parts[2], q.get('date') || '');
+    return stops ? send(res, 200, { stops }) : send(res, 404, { error: 'Unknown trip' });
+  }
+
   if (parts[1] === 'stops' && parts[3] === 'arrivals') {
     const limit = Math.min(Number(q.get('limit')) || 6, 20);
     const raw = gtfs.upcoming(parts[2], { routeId: q.get('route') || undefined, limit });
