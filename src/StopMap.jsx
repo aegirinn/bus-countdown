@@ -90,6 +90,9 @@ export default function StopMap({ onPick, userPos, StopLine }) {
     });
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
+      // request tiles with CORS so the app can store them on the phone (see public/sw.js);
+      // without it browsers count each stored tile as several MB of space
+      crossOrigin: true,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }).addTo(map);
 
