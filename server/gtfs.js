@@ -231,6 +231,7 @@ export function loadGtfs(dir) {
 
   const activeCache = new Map();
   const tripCache = new Map(); // trip index -> [{ stopId, sec }]
+  let allStopsCache = null;
   function isActive(serviceId, ymd, weekday) {
     const k = `${ymd}|${serviceId}`;
     if (activeCache.has(k)) return activeCache.get(k);
@@ -300,6 +301,27 @@ export function loadGtfs(dir) {
         const s = stopById.get(stopId);
         return { stopId, key: s?.key ?? null, name: s?.name ?? stopId, time: dayStart + sec * 1000 };
       });
+    },
+
+    /** Every stop, compactly, for the map: routes once, then [key, name, lat, lon, routeIds] per stop. */
+    allStops() {
+      if (!allStopsCache) {
+        const used = new Set();
+        const stops = [];
+        for (const g of groups.values()) {
+          const ids = listStop(g).lines.map((l) => l.id);
+          if (!ids.length) continue; // no buses stop here
+          ids.forEach((id) => used.add(id));
+          stops.push([g.key, g.name, Math.round(g.lat * 1e5) / 1e5, Math.round(g.lon * 1e5) / 1e5, ids]);
+        }
+        const routeInfo = {};
+        for (const id of used) {
+          const r = routes.get(id);
+          routeInfo[id] = { name: r.name, color: r.color, textColor: r.textColor };
+        }
+        allStopsCache = { routes: routeInfo, stops };
+      }
+      return allStopsCache;
     },
 
     nearestStops(lat, lon, limit = 8) {

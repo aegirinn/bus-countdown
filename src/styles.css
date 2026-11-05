@@ -203,3 +203,30 @@ button { font: inherit; color: inherit; cursor: pointer; }
   -webkit-mask-image: linear-gradient(to right, transparent 0, #000 14px, #000 calc(100% - 36px), transparent);
   mask-image: linear-gradient(to right, transparent 0, #000 14px, #000 calc(100% - 36px), transparent);
 }
+
+/* map of all stops */
+.map-panel { padding-bottom: 12px; }
+.map-box {
+  position: relative; height: 340px; border-radius: 12px; overflow: hidden;
+  border: 1px solid var(--line); background: var(--bg); isolation: isolate; /* keep Leaflet's layers inside */
+}
+.map { position: absolute; inset: 0; background: var(--bg); font: inherit; }
+.map-overlay { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: 14px; }
+.map-hint { margin: 10px 2px 0; font-size: 13px; }
+.map-pick { margin-top: 6px; }
+.btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); padding: 10px 18px; font-weight: 600; }
+.map .leaflet-control-attribution { font-size: 10px; }
+.map .leaflet-bar a { color: var(--ink); }
+@media (prefers-color-scheme: dark) {
+  /* OpenStreetMap has no dark style, so darken the map images instead */
+  .map .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.9); }
+  .map .leaflet-bar a, .map .leaflet-control-attribution { background: var(--panel); color: var(--ink); }
+  .map .leaflet-control-attribution a { color: var(--muted); }
+}
+
+.more {
+  width: 100%; margin-top: 6px; padding: 10px; display: flex; align-items: center; justify-content: center; gap: 6px;
+  background: none; border: 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; font-weight: 600;
+}
+.more:hover { color: var(--ink); }
+.more-up { margin: 0 0 6px; border-top: 0; border-bottom: 1px solid var(--line); }

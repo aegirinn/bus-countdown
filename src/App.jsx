@@ -1,9 +1,11 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { api } from './api.js';
 import { previewBell, ringBell, unlockAudio } from './bell.js';
 import { LANGS, STRINGS, LangContext, loadLang, saveLang, useT } from './i18n.js';
 
 const REFRESH_MS = 30_000;
+const PAGE = 6; // rows per "show more"
+const MAX_FETCH = 100;
 const ALARM_MS = 5 * 60_000; // ring when the bus is this far away
 const FAV_KEY = 'bus-countdown:favourites';
 const RECENT_KEY = 'bus-countdown:recent';
@@ -132,7 +134,7 @@ function PickList({ items, onPick }) {
   );
 }
 
-function StopSearch({ onPick, favourites, recent, onPickFav, onClearRecent }) {
+function StopSearch({ onPick, favourites, recent, onPickFav, onClearRecent, onLocate }) {
   const t = useT();
   const [q, setQ] = useState('');
   const [results, setResults] = useState([]);
@@ -161,6 +163,7 @@ function StopSearch({ onPick, favourites, recent, onPickFav, onClearRecent }) {
     navigator.geolocation.getCurrentPosition(
       async ({ coords }) => {
         try {
+          onLocate?.({ lat: coords.latitude, lon: coords.longitude });
           setResults(await api.nearby(coords.latitude, coords.longitude));
           setQ('');
         } catch (e) {
@@ -247,6 +250,8 @@ function Chips({ options, value, onChange, render }) {
   );
 }
 
+const StopMap = lazy(() => import('./StopMap.jsx'));
+
 const tripCache = new Map(); // `${tripId}|${date}` -> stops
 
 /** The stops the next bus makes, as a horizontal line: passed stops faded, this stop highlighted. */
@@ -320,18 +325,27 @@ function Board({ stop, route, to, setSel, onBack, isFav, toggleFav, realtime }) 
   const [data, setData] = useState(null);
   const [error, setError] = useState('');
 
+  // "Næstu ferðir" shows PAGE rows at a time; the arrows step between pages
+  const [page, setPage] = useState(0);
+  useEffect(() => setPage(0), [stop.key, route, to]);
+  // fetch past the end of this page so we know whether there's a next one
+  // (and extra when one direction is filtered out on this side)
+  const fetchLimit = Math.min(((page + 1) * PAGE + 8) * (to ? 2 : 1), MAX_FETCH);
+
   const load = useCallback(async () => {
     try {
-      const r = await api.arrivals(stop.key, route, 20);
+      const r = await api.arrivals(stop.key, route, fetchLimit);
       setData(r);
       setError('');
     } catch (e) {
       setError(e.message);
     }
-  }, [stop.key, route]);
+  }, [stop.key, route, fetchLimit]);
+
+  // clear the board only when switching stop/route, not when "show more" fetches a longer list
+  useEffect(() => setData(null), [stop.key, route]);
 
   useEffect(() => {
-    setData(null);
     load();
     const id = setInterval(load, REFRESH_MS);
     const onVis = () => document.visibilityState === 'visible' && load();
@@ -349,6 +363,7 @@ function Board({ stop, route, to, setSel, onBack, isFav, toggleFav, realtime }) 
     .filter((a) => !to || a.headsign === to)
     .filter((a) => a.expected > now - 15_000);
   const [next, ...later] = list;
+  const pageNow = Math.min(page, Math.max(0, Math.ceil(later.length / PAGE) - 1));
 
   // When the shown bus has gone, fetch again so the list doesn't run dry
   useEffect(() => {
@@ -478,8 +493,16 @@ function Board({ stop, route, to, setSel, onBack, isFav, toggleFav, realtime }) 
       {later.length > 0 && (
         <section className="panel">
           <p className="label">{t.afterThat}</p>
+          {pageNow > 0 && (
+            <button className="more more-up" onClick={() => setPage(pageNow - 1)}>
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path d="M6 15l6-6 6 6" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <span>{t.earlier}</span>
+            </button>
+          )}
           <ul className="list later">
-            {later.slice(0, 6).map((a) => (
+            {later.slice(pageNow * PAGE, pageNow * PAGE + PAGE).map((a) => (
               <li key={`${a.tripId}|${a.serviceDate}`} className="later-row">
                 <RouteBadge route={routesById[a.routeId]} size="sm" />
                 <span className="later-dest">
@@ -491,6 +514,14 @@ function Board({ stop, route, to, setSel, onBack, isFav, toggleFav, realtime }) 
               </li>
             ))}
           </ul>
+          {later.length > (pageNow + 1) * PAGE && (
+            <button className="more" onClick={() => setPage(pageNow + 1)}>
+              <span>{t.later}</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          )}
         </section>
       )}
 
@@ -510,6 +541,7 @@ export default function App() {
   const [error, setError] = useState('');
   const [favs, setFavs] = useState(loadFavs);
   const [recent, setRecent] = useState(() => loadList(RECENT_KEY));
+  const [userPos, setUserPos] = useState(null);
   const [lang, setLangRaw] = useState(loadLang);
   const t = STRINGS[lang];
   const setLang = (code) => {
@@ -636,13 +668,19 @@ export default function App() {
       {error && !stop && <p className="error panel">{error}</p>}
 
       {!sel.stop && (
-        <StopSearch
-          favourites={favs}
-          recent={recentShown}
-          onClearRecent={clearRecent}
-          onPick={(key) => setSel({ stop: key, route: null, to: null })}
-          onPickFav={(f) => setSel({ stop: f.stop, route: f.route, to: f.to })}
-        />
+        <>
+          <StopSearch
+            favourites={favs}
+            recent={recentShown}
+            onClearRecent={clearRecent}
+            onPick={(key) => setSel({ stop: key, route: null, to: null })}
+            onPickFav={(f) => setSel({ stop: f.stop, route: f.route, to: f.to })}
+            onLocate={setUserPos}
+          />
+          <Suspense fallback={null}>
+            <StopMap onPick={(key) => setSel({ stop: key, route: null, to: null })} userPos={userPos} StopLine={StopLine} />
+          </Suspense>
+        </>
       )}
 
       {sel.stop && stop && stop.key === sel.stop && (

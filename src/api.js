@@ -13,6 +13,7 @@ export const api = {
   search: (q) => get(`/api/stops?q=${encodeURIComponent(q)}`),
   nearby: (lat, lon) => get(`/api/stops?lat=${lat}&lon=${lon}`),
   stop: (key) => get(`/api/stops/${encodeURIComponent(key)}`),
+  allStops: () => get('/api/map'),
   trip: (tripId, date) => get(`/api/trips/${encodeURIComponent(tripId)}?date=${date}`),
   arrivals: (key, route, limit = 8) =>
     get(`/api/stops/${encodeURIComponent(key)}/arrivals?limit=${limit}${route ? `&route=${encodeURIComponent(route)}` : ''}`),

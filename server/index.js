@@ -54,6 +54,8 @@ async function api(req, res, url) {
     });
   }
 
+  if (parts[1] === 'map') return send(res, 200, gtfs.allStops());
+
   if (parts[1] === 'stops' && parts.length === 2) {
     if (q.get('lat') && q.get('lon')) return send(res, 200, gtfs.nearestStops(Number(q.get('lat')), Number(q.get('lon'))));
     return send(res, 200, gtfs.searchStops(q.get('q') || ''));
@@ -70,7 +72,7 @@ async function api(req, res, url) {
   }
 
   if (parts[1] === 'stops' && parts[3] === 'arrivals') {
-    const limit = Math.min(Number(q.get('limit')) || 6, 20);
+    const limit = Math.min(Number(q.get('limit')) || 6, 100);
     const raw = gtfs.upcoming(parts[2], { routeId: q.get('route') || undefined, limit });
     if (!raw) return send(res, 404, { error: 'Unknown stop' });
     const now = Date.now();
