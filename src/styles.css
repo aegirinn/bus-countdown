@@ -158,3 +158,10 @@ button { font: inherit; color: inherit; cursor: pointer; }
 @keyframes swing { 0%, 70%, 100% { transform: rotate(0); } 78% { transform: rotate(14deg); } 86% { transform: rotate(-12deg); } 94% { transform: rotate(6deg); } }
 @media (prefers-reduced-motion: reduce) { .bell.on svg { animation: none; } }
 .bell-note { margin: 4px 0 0; font-size: 14px; font-weight: 600; }
+
+.badge-xs { min-width: 24px; height: 20px; padding: 0 5px; font-size: 12px; border-radius: 5px; }
+.stop-line { display: flex; flex-wrap: wrap; align-items: center; column-gap: 10px; row-gap: 4px; min-width: 0; }
+.stop-line-name { min-width: 0; }
+.lines { display: inline-flex; flex-wrap: wrap; gap: 4px; }
+.lines-more { font-size: 12px; font-weight: 600; color: var(--muted); align-self: center; padding-left: 2px; }
+.list-item .dist { flex: none; white-space: nowrap; }

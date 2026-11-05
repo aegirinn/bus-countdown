@@ -196,6 +196,18 @@ export function loadGtfs(dir) {
     `[gtfs] indexed ${groups.size} stops, ${routes.size} routes, ${trips.length} trips in ${Date.now() - t0} ms`,
   );
 
+  // For lists of stops: the route numbers that stop there (just enough to draw the badges)
+  const byRouteName = (a, b) => a.name.localeCompare(b.name, 'is', { numeric: true });
+  function listStop(g) {
+    const m = routesAtGroup.get(g.key) || new Map();
+    const lines = [...m.keys()]
+      .map((id) => routes.get(id))
+      .filter(Boolean)
+      .sort(byRouteName)
+      .map(({ id, name, color, textColor }) => ({ id, name, color, textColor }));
+    return { ...publicStop(g), lines };
+  }
+
   const activeCache = new Map();
   function isActive(serviceId, ymd, weekday) {
     const k = `${ymd}|${serviceId}`;
@@ -227,7 +239,7 @@ export function loadGtfs(dir) {
         out.push({ g, score: (i === 0 ? 0 : 1) + g.folded.length / 1000 });
       }
       out.sort((a, b) => a.score - b.score);
-      return out.slice(0, limit).map(({ g }) => publicStop(g));
+      return out.slice(0, limit).map(({ g }) => listStop(g));
     },
 
     getStop(key) {
@@ -246,7 +258,7 @@ export function loadGtfs(dir) {
         .map((g) => ({ g, d: distanceM(lat, lon, g.lat, g.lon) }))
         .sort((a, b) => a.d - b.d)
         .slice(0, limit)
-        .map(({ g, d }) => ({ ...publicStop(g), distanceM: Math.round(d) }));
+        .map(({ g, d }) => ({ ...listStop(g), distanceM: Math.round(d) }));
     },
 
     /**

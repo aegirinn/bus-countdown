@@ -61,6 +61,7 @@ function saveList(key, list) {
   }
 }
 const loadFavs = () => loadList(FAV_KEY);
+const lineOf = (r) => (r ? { id: r.id, name: r.name, color: r.color, textColor: r.textColor } : null);
 const saveFavs = (f) => saveList(FAV_KEY, f);
 
 function useNow(interval = 1000) {
@@ -83,19 +84,47 @@ function RouteBadge({ route, size = 'md' }) {
   );
 }
 
+const MAX_LINES = 8;
+
+/** The bus numbers that stop somewhere, shown after its name. */
+function Lines({ lines }) {
+  if (!lines?.length) return null;
+  const shown = lines.slice(0, MAX_LINES);
+  const more = lines.length - shown.length;
+  return (
+    <span className="lines">
+      {shown.map((r) => (
+        <RouteBadge key={r.id} route={r} size="xs" />
+      ))}
+      {more > 0 && <span className="lines-more">+{more}</span>}
+    </span>
+  );
+}
+
+function StopLine({ name, lines, extra }) {
+  return (
+    <span className="stop-line">
+      <span className="stop-line-name">
+        {name}
+        {extra}
+      </span>
+      <Lines lines={lines} />
+    </span>
+  );
+}
+
 function PickList({ items, onPick }) {
   return (
     <ul className="list">
       {items.map((f) => (
         <li key={`${f.stop}|${f.route}|${f.to}`}>
           <button className="list-item" onClick={() => onPick(f)}>
-            <span className="fav-line">
-              {f.routeInfo && <RouteBadge route={f.routeInfo} size="sm" />}
-              <span>
-                {f.stopName}
-                {f.to && <span className="muted"> → {f.to}</span>}
-              </span>
-            </span>
+            <StopLine
+              name={f.stopName}
+              // a shortcut filtered to one route shows that route; otherwise every route at the stop
+              lines={f.routeInfo ? [f.routeInfo] : f.lines}
+              extra={f.to && <span className="muted"> → {f.to}</span>}
+            />
           </button>
         </li>
       ))}
@@ -171,8 +200,8 @@ function StopSearch({ onPick, favourites, recent, onPickFav, onClearRecent }) {
           {results.map((s) => (
             <li key={s.key}>
               <button className="list-item" onClick={() => onPick(s.key)}>
-                <span>{s.name}</span>
-                <span className="muted">{s.distanceM != null ? `${s.distanceM} m` : ''}</span>
+                <StopLine name={s.name} lines={s.lines} />
+                {s.distanceM != null && <span className="muted dist">{s.distanceM} m</span>}
               </button>
             </li>
           ))}
@@ -455,8 +484,15 @@ export default function App() {
       route: sel.route || null,
       to: sel.to || null,
       stopName: stop.name,
-      routeInfo: stop.routes.find((r) => r.id === sel.route) || null,
+      routeInfo: lineOf(stop.routes.find((r) => r.id === sel.route)),
+      lines: stop.routes.map(lineOf),
     };
+    setFavs((prev) => {
+      if (!prev.some((f) => f.stop === entry.stop && !f.lines)) return prev;
+      const next = prev.map((f) => (f.stop === entry.stop && !f.lines ? { ...f, lines: entry.lines } : f));
+      saveFavs(next);
+      return next;
+    });
     setRecent((prev) => {
       const next = [entry, ...prev.filter((r) => r.stop !== entry.stop)].slice(0, RECENT_MAX);
       saveList(RECENT_KEY, next);
@@ -474,7 +510,14 @@ export default function App() {
     const next = isFav
       ? favs.filter((f) => favKey(f) !== favKey(sel))
       : [
-          { stop: sel.stop, route: sel.route || null, to: sel.to || null, stopName: stop.name, routeInfo: stop.routes.find((r) => r.id === sel.route) || null },
+          {
+            stop: sel.stop,
+            route: sel.route || null,
+            to: sel.to || null,
+            stopName: stop.name,
+            routeInfo: lineOf(stop.routes.find((r) => r.id === sel.route)),
+            lines: stop.routes.map(lineOf),
+          },
           ...favs,
         ].slice(0, 12);
     setFavs(next);
